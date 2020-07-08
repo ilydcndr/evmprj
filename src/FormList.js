@@ -1,19 +1,19 @@
 import React from 'react';
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
-const AnaSayfa = (props) => {
+const FormList = (props) => {
   return (
-    <Row>
+    <Row className="mt-5">
       <Col sm="4">
         <Card body>
           <CardTitle>İlayda Cundar</CardTitle>
           <CardTitle>27</CardTitle>
-          <CardText>hayvanları çok sever,sakin neşeli bir kızdır.</CardText>
-          <Button>Düzenle</Button>
+          <CardText>text....</CardText>
+          <Button color="success">Düzenle</Button>
         </Card>
       </Col>
     </Row>
   );
 };
 
-export default AnaSayfa;
+export default FormList;

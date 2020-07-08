@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
-import AnaSayfa from './AnaSayfa';
-import {Button} from 'reactstrap'
+import Modal from './Modal';
+import FormList from './FormList';
+
+
 
 function App() {
   return (
     <div className="App">
-      <Button >Form Oluştur</Button>
-      <AnaSayfa></AnaSayfa>
+      <Modal/>
+      <FormList/>
+      
     </div>
   );
 }
