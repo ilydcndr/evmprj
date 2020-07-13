@@ -12,10 +12,7 @@ function App() {
      for (let index = 0; index <=Increase; index++) {
       var details = JSON.parse(localStorage.getItem(Increase))
        setArray([...array,{details}])
-     }
-      
-          
-     
+     } 
    }
 
    const createdTime=()=>{
