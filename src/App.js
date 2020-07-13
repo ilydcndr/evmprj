@@ -28,10 +28,7 @@ function App() {
   return (
     <div className="App">
       <Modal fnk={transportData} timefnk={createdTime} />
-      <FormList data={array}>
-      </FormList>
-     
-      
+      <FormList data={array}/>
     </div>
   );
 }
