@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Label, Col, Form } from 'reactstrap';
 import { useForm } from "react-hook-form";
 
-const ModalComp = () => {
+const ModalComp = (props) => {
     const [modal, setModal] = useState(false);
     const [field, setField] = useState([])
     const [count, setCount] = useState(0)
@@ -12,20 +12,20 @@ const ModalComp = () => {
     const onSubmit = values => {
         setModal(!modal);
         const Increase = Id + 1;
-        console.log("field",field)
-        console.log("values",values)
+  
         for (let index = 1; index <=count; index++) {
             field[index-1].fieldName=values[`fieldName${index}`]
             field[index-1].checkbox=values[`checkbox${index}`]
             field[index-1].dataType=values[`dataType${index}`]        
         }  
-        const bilgi = { "formId": Increase, "formName": values.formName, "formDescription": values.formDescription, "fields": field }
+        const Initialdate=props.timefnk().props.children
+        const bilgi = { "formId": Increase, "formName": values.formName, "formDescription": values.formDescription,"time":Initialdate ,"fields": field }
         const val = JSON.stringify(bilgi)
         localStorage.setItem(Increase, val)
+        props.fnk(Increase)
         setId(Increase)
         setField([]);
-        setCount(0)
-       
+        setCount(0)      
     }
 
     const toggle = () => {
