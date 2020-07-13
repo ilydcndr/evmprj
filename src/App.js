@@ -2,6 +2,7 @@ import React,{ useState } from 'react';
 import './App.css';
 import Modal from './Modal';
 import FormList from './FormList';
+import FormComp from './FormComp';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
   return (
     <div className="App">
       <Modal fnk={transportData} timefnk={createdTime} />
-      <FormList data={array} />
+      <FormList data={array}>
+      </FormList>
+     
       
     </div>
   );
