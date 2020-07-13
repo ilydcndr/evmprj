@@ -6,7 +6,8 @@ import { Input, Label } from 'reactstrap'
 const FormList = (props) => {
   const { handleSubmit, register, errors } = useForm();
 
-  const onSubmit = (createdData,e )=> {
+  const onSubmit = (createdData)=> {
+    console.log(createdData)
   }
  
 
@@ -25,7 +26,7 @@ const FormList = (props) => {
                     <CardTitle>{props.data[index].details.formDescription}</CardTitle>
                     <CardTitle>{`Düzenlenme Tarihi : ${props.data[index].details.time}`}</CardTitle>
                     <CardBody>
-                      <form onSubmit={handleSubmit(onSubmit())}>
+                      <form onSubmit={handleSubmit(onSubmit)}>
                         {props.data[index].details.fields && props.data[index].details.fields.map((item, num) => {
                           return (
                             <div class="form-group row" >
@@ -41,7 +42,7 @@ const FormList = (props) => {
                           )
                         })}
                         <CardFooter>
-                          <button type="submit" name={uniqField}>Gönder</button>
+                          <button type="submit" >Gönder</button>
                         </CardFooter>
                       </form>
                     </CardBody>
